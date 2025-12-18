@@ -1,0 +1,253 @@
+body {
+    background-image: url("bin/menu.png");
+    background-size: cover;    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    position: relative;
+    padding-top: 200px;
+    box-sizing: border-box;
+}
+
+.log {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 120px; 
+  height: auto;
+  z-index: 10;
+}
+
+.foto{
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  width: 220px; 
+  height: auto;
+  z-index: 10;
+}
+
+.shorts{
+  position: absolute;
+  top: 102px;
+  left: 20px;
+  width: 220px; 
+  height: auto;
+  z-index: 10;
+}
+
+.ist{
+  position: absolute;
+  top: 144px;
+  left: 20px;
+  width: 220px; 
+  height: auto;
+  z-index: 10;
+}
+
+.container {
+  display: flex;                
+  justify-content: center;      
+  align-items: center;          
+  flex-wrap: wrap; /* Важно: разрешаем перенос */
+  gap: 20px;
+  width: 100%;
+  max-width: 1400px;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto; /* Центрируем контейнер */
+}      
+
+.img1, .img2, .img3, .img4, .img5 {
+  height: 300px; /* Фиксированная высота */
+  width: auto; /* Ширина автоматическая для сохранения пропорций */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  object-fit: contain;
+  flex-shrink: 0; /* Запрещаем уменьшение */
+}
+
+/* Для планшетов и небольших ноутбуков */
+@media (max-width: 1200px) {
+  body {
+    padding-top: 180px;
+  }
+  
+  .foto, .shorts, .ist {
+    width: 180px;
+  }
+  
+  .log {
+    width: 100px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 250px; /* Немного уменьшаем, но не сильно */
+  }
+}
+
+/* Для планшетов в портретной ориентации */
+@media (max-width: 900px) {
+  body {
+    padding-top: 160px;
+  }
+  
+  .foto, .shorts, .ist {
+    width: 150px;
+    top: 15px;
+  }
+  
+  .foto {
+    top: 50px;
+  }
+  
+  .shorts {
+    top: 87px;
+  }
+  
+  .ist {
+    top: 124px;
+  }
+  
+  .log {
+    width: 80px;
+    top: 15px;
+  }
+  
+  .container {
+    gap: 15px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 220px; /* Сохраняем хороший размер */
+  }
+}
+
+/* Для мобильных устройств - ДВЕ фотографии в ряд */
+@media (max-width: 768px) {
+  body {
+    padding-top: 140px;
+  }
+  
+  .foto, .shorts, .ist {
+    width: 120px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .foto {
+    top: 40px;
+  }
+  
+  .shorts {
+    top: 72px;
+  }
+  
+  .ist {
+    top: 104px;
+  }
+  
+  .log {
+    width: 60px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .container {
+    gap: 15px;
+    padding: 10px;
+    justify-content: space-around; /* Равномерное распределение */
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 200px; /* Сохраняем хороший размер */
+    flex: 0 0 auto; /* Фиксированный размер, не растягивается */
+  }
+}
+
+/* Для очень маленьких экранов - ОДНА фотография в ряд */
+@media (max-width: 480px) {
+  body {
+    padding-top: 130px;
+  }
+  
+  .foto, .shorts, .ist {
+    width: 100px;
+  }
+  
+  .foto {
+    top: 35px;
+  }
+  
+  .shorts {
+    top: 65px;
+  }
+  
+  .ist {
+    top: 95px;
+  }
+  
+  .log {
+    width: 50px;
+  }
+  
+  .container {
+    flex-direction: column; /* Вертикальное расположение */
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 220px; /* Можно даже увеличить на мобильных */
+    width: 90%; /* Ширина 90% от экрана */
+    max-width: 300px; /* Но не больше 300px */
+  }
+}
+
+/* Для высоких экранов */
+@media (min-height: 1000px) {
+  body {
+    padding-top: 250px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 350px;
+  }
+}
+
+/* Для очень низких экранов */
+@media (max-height: 600px) {
+  body {
+    padding-top: 130px;
+  }
+  
+  .foto, .shorts, .ist {
+    width: 100px;
+  }
+  
+  .foto {
+    top: 35px;
+  }
+  
+  .shorts {
+    top: 65px;
+  }
+  
+  .ist {
+    top: 95px;
+  }
+  
+  .log {
+    width: 50px;
+  }
+  
+  .img1, .img2, .img3, .img4, .img5 {
+    height: 180px; /* Немного уменьшаем только на очень низких экранах */
+  }
+}
